@@ -1,9 +1,5 @@
 FROM node:alpine
 
-# COPY ../dist/apps/courses-react /usr/share/nginx/html
-
-# COPY ../nginx/nginx.conf /etc/nginx/nginx.conf
-
 LABEL maintainer="Dave Baumann"
 
 ENV CONTAINER_PATH=/usr/src/app
@@ -18,4 +14,6 @@ EXPOSE 4201
 
 RUN npm install --silent
 
-CMD ["nx", "serve"]
+RUN apk --no-cache add curl
+
+CMD ["npm", "run", "start-docker"]

@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.4'
 services:
   api:
     container_name: courses_api
@@ -11,6 +11,22 @@ services:
       - /usr/src/app/node_modules
     ports:
       - '3333:3333'
+    networks:
+      - courses-network
+  web:
+    depends_on:
+      - api
+    container_name: courses_web
+    image: courses_web
+    build:
+      context: .
+      dockerfile: ./apps/courses-react/Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./apps/courses-react/docker.proxy.conf.json:/usr/src/app/apps/courses-react/proxy.conf.json
+    ports:
+      - '4201:4201'
     networks:
       - courses-network
 networks:

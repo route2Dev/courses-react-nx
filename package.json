@@ -5,10 +5,12 @@
   "scripts": {
     "nx": "nx",
     "start": "nx serve --port=4201",
+    "start-docker": "npm start -- --host=0.0.0.0",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",
+    "docker-dev": "docker-compose build && docker-compose up",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
