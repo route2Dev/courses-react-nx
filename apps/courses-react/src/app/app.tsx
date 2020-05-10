@@ -1,26 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@courses-react-nx/api-interfaces';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Header from './components/header';
+import HomePage from './pages/home/home-page';
+import CoursesPage from './pages/courses/courses-page';
+import { useSelector } from 'react-redux';
+import { AppState } from './store/app-state';
+import LoadingOverlay from 'react-loading-overlay';
+import PageNotFound from './pages/page-not-found';
+import AboutPage from './pages/about-page';
+import ManageCoursePage from './pages/manage-course/manage-course-page';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import './app.scss';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then(r => r.json())
-      .then(setMessage);
-  }, []);
+  const apiiCallsInProgress = useSelector(
+    (state: AppState) => state.apiCallsInProgress
+  );
 
   return (
-    <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to courses-react!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-        />
+    <LoadingOverlay active={apiiCallsInProgress > 0} spinner text="Loading...">
+      <div className="container-fluid">
+        <Header />
+        <Switch>
+          <Route exact={true} path="/" component={HomePage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/courses" component={CoursesPage} />
+          <Route path="/course/:slug" component={ManageCoursePage} />
+          <Route path="/course" component={ManageCoursePage} />
+          <Route component={PageNotFound} />
+        </Switch>
+        <ToastContainer autoClose={3000} hideProgressBar={true} />
       </div>
-      <div>{m.message}</div>
-    </>
+    </LoadingOverlay>
   );
 };
 

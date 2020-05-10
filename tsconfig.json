@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@courses-react-nx/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@courses-react-nx/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@courses-react-nx/courses-ui": ["libs/courses-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

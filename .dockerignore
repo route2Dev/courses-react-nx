@@ -1,0 +1,14 @@
+.vscode
+node_modules
+dist
+tmp
+tools
+.dockerignore
+.editorconfig
+.eslintrc
+.gitignore
+.prettierignore
+.prettierrc
+docker-compose.yml
+jest.config.js
+readme.md
