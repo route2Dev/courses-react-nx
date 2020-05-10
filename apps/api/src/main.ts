@@ -9,7 +9,7 @@ app.use((req, resp, next) => {
   setTimeout(next, 2000);
 });
 
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 app.use((req, resp, next) => {
   if (req.method === 'POST') {

@@ -4,8 +4,8 @@ import { Formik } from 'formik';
 
 import './course-form.scss';
 import { Course, Author } from '@courses-react-nx/api-interfaces';
-import TextInput from '../inputs/TextInput';
-import SelectInput from '../inputs/SelectInput';
+import TextInput from '../inputs/text-input';
+import SelectInput from '../inputs/select-input';
 
 /* eslint-disable-next-line */
 export interface CourseFormProps {
@@ -26,7 +26,9 @@ export const CourseForm: React.FC<CourseFormProps> = ({
         initialValues={course}
         initialStatus={false}
         onSubmit={async (values, { setSubmitting }) => {
-          await onSave(values);
+          // convert authorId to a number
+          const valuesToSave = { ...values, authorId: Number(values.authorId) };
+          await onSave(valuesToSave);
           setSubmitting(false);
         }}
         validationSchema={Yup.object({

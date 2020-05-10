@@ -16,4 +16,4 @@ RUN npm install --silent
 
 RUN apk --no-cache add curl
 
-CMD ["npm", "run", "start-docker"]
+CMD ["nx", "serve", "--port=4201", "--host=0.0.0.0"]
