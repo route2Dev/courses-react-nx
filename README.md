@@ -36,7 +36,7 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Docker
 
-Run `npm run docker-dev` to build and run the api app and the courses-react app in docker containers as a Dev. Navigate to http://localhost:4201/. The app will automatically reload if you change any of the source files.my-
+Run `npm run docker-dev` to build and run the api app and the courses-react app in docker containers as a Dev. Navigate to http://localhost:4201/. The app will automatically reload if you change any of the source files.
 
 ## Further help
 
