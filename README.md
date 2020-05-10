@@ -8,13 +8,29 @@ This project was generated using [Nx](https://nx.dev).
 
 ## Development server
 
-Run `nx serve api` and `nx serve courses-react` for a dev server. Navigate to http://localhost:4201/. The app will automatically reload if you change any of the source files. The api dev server is available at http://localhost:3333/.
+Run `nx serve api` and `nx serve courses-react` for a dev server. Alternatively you can run `npm start`. Navigate to http://localhost:4201/. The api dev server is available at http://localhost:3333/. The app will automatically reload if you change any of the source files.
 
 ## Development in Docker
 
-Run `npm run start-docker` to build and run the api dev server and the courses-react dev server in docker containers. Navigate to http://localhost:4201/. The app will automatically reload if you change any of the source files.
+##### Developing in Docker uses volumes to enable automatic reloading. You will need to enable file sharing in Docker Desktop.
 
-### Developing in Docker uses volumes to enable automatic reloading. You will need to enable file sharing in Docker Desktop.
+### Development
+
+#### Starting the Docker Containers
+
+Run `npm run start-docker-dev`. This is the same as `npm start` only using docker containers to host the development servers. Navigate to http://localhost:4201/. The app will automatically reload if you change any of the source files.
+
+You can optionally pass a `-- -d` argument which will start the containers in detached mode add give you back your console.
+
+#### Stopping the Docker Containers
+
+Stop the containers by sending `Ctrl + C` (Windows) and wait for them to exit.  
+or  
+Run `npm run stop-docker-dev` or `docker-compose stop` (if you passed the `-- -d` argument)
+
+#### Removing the Docker Containers and Shared Network
+
+Run `npm run remove-docker-dev` or `docker-compose down`
 
 ## Code scaffolding
 
