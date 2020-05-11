@@ -1,0 +1,40 @@
+version: '3.4'
+
+networks:
+  courses-network:
+    driver: bridge
+
+services:
+  api0:
+    container_name: courses_api0
+    image: courses_api_prod
+    build:
+      context: .
+      dockerfile: ./apps/api/.Docker/prod.Dockerfile
+    networks:
+      - courses-network
+    ports:
+      - '9001:9000'
+  api1:
+    container_name: courses_api1
+    image: courses_api_prod
+    build:
+      context: .
+      dockerfile: ./apps/api/.Docker/prod.Dockerfile
+    networks:
+      - courses-network
+    ports:
+      - '9002:9000'
+  web:
+    depends_on:
+      - api0
+      - api1
+    container_name: courses_web_prod
+    image: courses_web_prod
+    build:
+      context: .
+      dockerfile: ./apps/courses-react/.Docker/prod.Dockerfile
+    networks:
+      - courses-network
+    ports:
+      - '80:80'

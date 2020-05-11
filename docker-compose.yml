@@ -1,11 +1,16 @@
 version: '3.4'
+
+networks:
+  courses-network:
+    driver: bridge
+
 services:
   api:
     container_name: courses_api
     image: courses_api
     build:
       context: .
-      dockerfile: ./apps/api/Dockerfile
+      dockerfile: ./apps/api/.Docker/Dockerfile
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -20,15 +25,12 @@ services:
     image: courses_web
     build:
       context: .
-      dockerfile: ./apps/courses-react/Dockerfile
+      dockerfile: ./apps/courses-react/.Docker/Dockerfile
     volumes:
       - .:/usr/src/app
-      - /usr/src/app/node_modules
       - ./apps/courses-react/docker.proxy.conf.json:/usr/src/app/apps/courses-react/proxy.conf.json
+      - /usr/src/app/node_modules
     ports:
       - '4201:4201'
     networks:
       - courses-network
-networks:
-  courses-network:
-    driver: bridge
