@@ -40,6 +40,9 @@ Run `nx g @nrwl/react:component my-component --project=courses-react` to generat
 
 Run `nx build api` and `nx build courses-react` to build the projects. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Build Docker Containers
+Run `docker-compose -f doccker-compose.prod.yml build`
+
 ## Running unit tests
 
 Run `nx test courses-react` to execute the unit tests via [Jest](https://jestjs.io).
