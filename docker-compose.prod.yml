@@ -18,13 +18,12 @@ services:
   api1:
     container_name: courses_api1
     image: courses_api_prod
-    build:
-      context: .
-      dockerfile: ./apps/api/.Docker/prod.Dockerfile
     networks:
       - courses-network
     ports:
       - '9002:9000'
+    depends_on:
+      - api0
   web:
     depends_on:
       - api0

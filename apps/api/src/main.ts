@@ -2,11 +2,12 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import { Message } from '@courses-react-nx/api-interfaces';
 import { addCourseRoutes, addAuthorRoutes } from './app/routes';
+import { environment } from './environments/environment';
 
 const app = express();
 
 app.use((req, resp, next) => {
-  setTimeout(next, 2000);
+  setTimeout(next, !environment.production ? 2000 : 1000);
 });
 
 app.use(bodyParser.json());

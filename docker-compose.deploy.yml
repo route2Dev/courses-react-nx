@@ -4,8 +4,6 @@ services:
   api0:
     container_name: courses_api0
     image: coursesreactnxacr.azurecr.io/courses_api_prod
-    networks:
-      - courses-network
     ports:
       - '9001:9000'
   api1:

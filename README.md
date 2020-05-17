@@ -1,10 +1,15 @@
+<img align="right" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K" alt="" width="35">
+
 # Courses React Nx
 
-This project was generated using [Nx](https://nx.dev).
+[![Build Status](https://dev.azure.com/route2solutions/Courses-React-Nx/_apis/build/status/Courses-React-Nx%20-%20CI?branchName=master)](https://dev.azure.com/route2solutions/Courses-React-Nx/_build/latest?definitionId=3&branchName=master)
+[![Deployment Status](https://img.shields.io/azure-devops/release/route2solutions/b038de7d-ce60-4cd3-8c96-0d9948d3dcb3/1/1)](https://img.shields.io/azure-devops/release/route2solutions/b038de7d-ce60-4cd3-8c96-0d9948d3dcb3/1/1)
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+This project was generated using [Nx](https://nx.dev)<sup>🔎</sup>
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+## Inspiration
+
+This project is a <strong>MonoRepo</strong> + <strong>Typescript</strong> + <strong>Formik</strong> adaptation of the [Building Applications with React and Redux](https://app.pluralsight.com/library/courses/react-redux-react-router-es6/table-of-contents) Pluralsight Course by Cory House.
 
 ## Development server
 
@@ -61,4 +66,12 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
 
-Visit the [Nx Documentation](https://nx.dev) to learn more.
+Visit the [Nx Documentation](https://nx.dev/react) to learn more.
+!
+
+<p align="center">
+    <a href="https://nx.dev/react/getting-started/why-nx" title="Why Nx"><img style="padding-right:50px" src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" height="75px"></a>
+    <a href="https://jaredpalmer.com/formik/" title="Formik"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IndoaXRlIiB2aWV3Qm94PSIwIDAgNjAgODQiPjxwYXRoIGZpbGw9IndoaXRlIiBkPSJNMzguODY5IDBsOS42OTQgNS41NzUtMzguMTc2IDIxLjk1My05LjY5NC01LjU3NEwzOC44NjkgMHptMTAuMDg1IDYuNzQ1TDExLjAxOCAyOC41NTFsLS4wMDEgMTEuMDMyIDM3LjkzNi0yMS44MDVWNi43NDV6TTMzLjY5OSAyOC4yNzZsLTIyLjYwMSAxMi45OS0uMDAyIDExLjAzNCAyMi42MDEtMTIuOTkyLjAwMi0xMS4wMzJ6bS04LjY2NCAxNy40NDFsLTEzLjk5IDguMDQyLS4wMDIgMTEuMDMzIDEzLjk5LTguMDQyLjAwMi0xMS4wMzN6TS4wMDQgMjMuMDE3bDkuNzUgNS42MDUtLjAwMyAxMS4wMzVMMCAzNC4wNTNsLjAwNC0xMS4wMzZ6bS4wOTMgMTIuNjRsOS42MzIgNS41MzctLjAwNCAxMS4wMzUtOS42MzItNS41MzYuMDA0LTExLjAzNnpNLjA5MiA0OC4yMjFsOS42MzYgNS41MzktLjAwNCAxMS43NjMtOS42MzYtNS41MzkuMDA0LTExLjc2M3pNMjEuNTY0IDg0bC05LjY5NC01LjU3NSAzNy43NDMtMjEuNzA0IDkuNjk0IDUuNTc1TDIxLjU2NCA4NHptLTEwLjQ2Mi02LjUyOWwzNy44NzktMjEuNzczLjAwMS0xMS4wMzItMzcuODc5IDIxLjc3My0uMDAxIDExLjAzMnpNMjYuMyA1NS45NzRsMjIuNjAxLTEyLjk5Mi4wMDEtMTEuMDMyLTIyLjYgMTIuOTktLjAwMiAxMS4wMzR6bTguNjY0LTE3LjQ0MmwxMy45OS04LjA0Mi4wMDItMTEuMDMzLTEzLjk5IDguMDQyLS4wMDIgMTEuMDMzem0yNS4wMzIgMjIuNzc0bC05Ljc1LTUuNjA1LjAwMy0xMS4wMzVMNjAgNTAuMjcxbC0uMDA0IDExLjAzNXptLS4wOTItMTIuNzExbC05LjYzMy01LjUzNy4wMDQtMTEuMDM1IDkuNjMzIDUuNTM2LS4wMDQgMTEuMDM2em0uMDA0LTEyLjU2NWwtOS42MzYtNS41MzguMDA0LTExLjU1MiA5LjYzNiA1LjUzOS0uMDA0IDExLjU1MnoiPjwvcGF0aD48L3N2Zz4=" width="75px"></a>
+</p>
+
+🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "concurrently \"npm:start:api\" \"npm:start:web\"",
+    "start": "concurrently \"npm:start:api\" \"npm:start:web\" \"start http://localhost:4201/\"",
     "start:web": "nx serve --port=4201",
     "start:api": "nx serve api",
     "start-docker-dev": "docker-compose build && docker-compose up",

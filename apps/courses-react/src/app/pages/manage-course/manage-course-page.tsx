@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
-// import { History } from 'history';
 import { Course, newCourse } from '@courses-react-nx/api-interfaces';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -54,6 +53,7 @@ export const ManageCoursePage: React.FC<ManageCoursePageProps> = ({
   const handleSave = async (course: Course) => {
     try {
       await dispatch(saveCourse(course));
+      history.push('/courses');
     } catch (error) {
       // TODO: pass server error to form to map to error state.
     }
