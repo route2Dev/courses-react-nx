@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  api0:
+    container_name: courses_api0
+    image: coursesreactnxacr.azurecr.io/courses_api_prod
+    networks:
+      - courses-network
+    ports:
+      - '9001:9000'
+  api1:
+    container_name: courses_api1
+    image: coursesreactnxacr.azurecr.io/courses_api_prod
+    ports:
+      - '9002:9000'
+  web:
+    container_name: courses_web_prod
+    image: coursesreactnxacr.azurecr.io/courses_web_prod
+    ports:
+      - '80:80'
